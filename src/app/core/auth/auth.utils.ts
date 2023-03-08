@@ -26,24 +26,25 @@ export class AuthUtils
      */
     static isTokenExpired(token: string, offsetSeconds?: number): boolean
     {
+        return false
         // Return if there is no token
-        if ( !token || token === '' )
-        {
-            return true;
-        }
+        // if ( !token || token === '' )
+        // {
+        //     return true;
+        // }
 
-        // Get the expiration date
-        const date = this._getTokenExpirationDate(token);
+        // // Get the expiration date
+        // const date = this._getTokenExpirationDate(token);
 
-        offsetSeconds = offsetSeconds || 0;
+        // offsetSeconds = offsetSeconds || 0;
 
-        if ( date === null )
-        {
-            return true;
-        }
+        // if ( date === null )
+        // {
+        //     return true;
+        // }
 
-        // Check if the token is expired
-        return !(date.valueOf() > new Date().valueOf() + offsetSeconds * 1000);
+        // // Check if the token is expired
+        // return !(date.valueOf() > new Date().valueOf() + offsetSeconds * 1000);
     }
 
     // -----------------------------------------------------------------------------------------------------
@@ -165,7 +166,7 @@ export class AuthUtils
         if ( parts.length !== 3 )
         {
             console.log(token);
-            
+
             throw new Error('The inspected token doesn\'t appear to be a JWT. Check to make sure it has three parts and see https://jwt.io for more.');
         }
 

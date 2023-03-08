@@ -50,13 +50,13 @@ export class AuthSignUpComponent implements OnInit
     {
         // Create the form
         this.signUpForm = this._formBuilder.group({
-                nom : ['', Validators.required],
-                prenom  : ['', Validators.required],
-                email     : ['', [Validators.required, Validators.email]],
-                role      : ['', Validators.required],
-                password  : ['', Validators.required],
-                company   : [''],
-                agreements: ['', Validators.requiredTrue]
+                nom : ['abid', Validators.required],
+                prenom  : ['kraiem', Validators.required],
+                email     : ['kraiemabid300@gmail.com', [Validators.required, Validators.email]],
+                role      : ['ADMIN', Validators.required],
+                password  : ['123456789', Validators.required],
+                company   : ['cca'],
+                agreements: [true, Validators.requiredTrue]
             }
         );
     }
@@ -64,7 +64,7 @@ export class AuthSignUpComponent implements OnInit
     {
         this.signUpForm.patchValue({role:change.value})
         console.log(change.value);
-        
+
     }
     // -----------------------------------------------------------------------------------------------------
     // @ Public methods
@@ -76,7 +76,7 @@ export class AuthSignUpComponent implements OnInit
     signUp(): void
     {
         console.log(this.signUpForm.value);
-        
+
         // Do nothing if the form is invalid
         if ( this.signUpForm.invalid )
         {
