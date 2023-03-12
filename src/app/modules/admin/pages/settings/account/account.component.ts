@@ -56,6 +56,8 @@ export class SettingsAccountComponent implements OnInit
                 this.accountForm.patchValue({nom : res.result.nom})
                 this.accountForm.patchValue({prenom : res.result.prenom})
                 this.accountForm.patchValue({email : res.result.email})
+                this.accountForm.patchValue({cin : res.result.cin})
+                this.accountForm.patchValue({specialite : res.result.specialite})
               }
             }
         )

@@ -12,7 +12,7 @@ export class ProfileComponent
     /**
      * Constructor
      */
-    constructor(private srv :ProfileService)
+    constructor(private srv :ProfileService )
     {
     }
 
