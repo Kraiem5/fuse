@@ -17,7 +17,8 @@ export class ProfileService {
   }
 
   getPersonelInfo(){
-    return this.http.get(environment.backend_url+'api/user/profile').subscribe(
-      data => {this.user = data}); 
-    }
+    return this.http.get(environment.backend_url+'api/user/profile',{
+    headers: {"x-auth-token": `${localStorage.getItem("accessToken")}`}
+    })
+  }
 }
