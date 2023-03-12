@@ -1,5 +1,12 @@
 
 <form action="">
+    <h2>photo :</h2>
+    <div>
+        <input #singleInput  type="file" name="image" (change)="selectImage($event)"/>
+        <button type="submit" (click)="onsubmit()"><mat-icon class="upload-icon">cloud_upload</mat-icon></button>
+    </div>
+    <img src="http://localhost:3000/api/user/file{{image}}" alt="">
+    <h2>cv :</h2>
     <div>
         <input #singleInput  type="file" name="image" (change)="selectImage($event)"/>
         <button type="submit" (click)="onsubmit()"><mat-icon class="upload-icon">cloud_upload</mat-icon></button>
