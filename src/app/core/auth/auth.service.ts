@@ -102,7 +102,7 @@ export class AuthService
     signInUsingToken(): Observable<any>
     {
         // Renew token
-        return this._httpClient.post(environment.backend_url+'api/user/refresh-access-token', {
+        return this._httpClient.post('api/auth/refresh-access-token', {
             accessToken: this.accessToken
         }).pipe(
             catchError(() =>

@@ -6,7 +6,7 @@ import { environment } from 'environments/environment';
   providedIn: 'root'
 })
 export class ProfileService {
-
+  user:any
   constructor(private http:HttpClient) { }
 
   updatePersonelInfo(body){
@@ -15,4 +15,9 @@ export class ProfileService {
         headers: {"x-auth-token": `${localStorage.getItem("accessToken")}`}
      })
   }
+
+  getPersonelInfo(){
+    return this.http.get(environment.backend_url+'api/user/profile').subscribe(
+      data => {this.user = data}); 
+    }
 }

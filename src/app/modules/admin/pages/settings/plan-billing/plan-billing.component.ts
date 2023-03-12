@@ -1,35 +1,61 @@
-import { ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { ChangeDetectionStrategy, Component, ElementRef, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { environment } from 'environments/environment';
 
 @Component({
     selector       : 'settings-plan-billing',
     templateUrl    : './plan-billing.component.html',
+    styleUrls       : ['./plan-billing.component.css'],
     encapsulation  : ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SettingsPlanBillingComponent implements OnInit
 {
+    @ViewChild('singleInput',{static:false}) singleInput:ElementRef
     planBillingForm: FormGroup;
     plans: any[];
 
-    /**
-     * Constructor
-     */
+    image:any
+
     constructor(
-        private _formBuilder: FormBuilder
+        private _formBuilder: FormBuilder,
+        private http:HttpClient
     )
     {
     }
 
-    // -----------------------------------------------------------------------------------------------------
-    // @ Lifecycle hooks
-    // -----------------------------------------------------------------------------------------------------
 
-    /**
-     * On init
-     */
+    
+
+    selectImage(event){
+        if(event.target.files.lenght>0){
+        const file = event.target.files[0]
+        console.log(file);
+        
+        this.image=file
+      }
+    }
+
+      onsubmit() {
+        const formdata = new FormData()
+        formdata.append('file',this.image)
+        
+        // post request to express backend
+
+        this.http.post<any>(environment.backend_url+'api/user/file',formdata)
+        .subscribe((res)=>{
+            console.log(res)
+        },err =>{
+            console.log(err);
+            
+        })
+      }
+
     ngOnInit(): void
     {
+
+        
         // Create the form
         this.planBillingForm = this._formBuilder.group({
             plan          : ['team'],
@@ -78,4 +104,6 @@ export class SettingsPlanBillingComponent implements OnInit
     {
         return item.id || index;
     }
+
+
 }

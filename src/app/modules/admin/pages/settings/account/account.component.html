@@ -12,20 +12,7 @@
             <!-- first Name -->
             <div class="sm:col-span-4">
                 <mat-form-field class="fuse-mat-no-subscript w-full">
-                    <mat-label>First name</mat-label>
-                    <mat-icon
-                        class="icon-size-5"
-                        [svgIcon]="'heroicons_solid:user'"
-                        matPrefix></mat-icon>
-                    <input
-                        [formControlName]="'prenom'"
-                        matInput>
-                </mat-form-field>
-            </div>
-            <!--lastname-->
-            <div class="sm:col-span-4">
-                <mat-form-field class="fuse-mat-no-subscript w-full">
-                    <mat-label>last name</mat-label>
+                    <mat-label>Nom</mat-label>
                     <mat-icon
                         class="icon-size-5"
                         [svgIcon]="'heroicons_solid:user'"
@@ -35,14 +22,24 @@
                         matInput>
                 </mat-form-field>
             </div>
-            <!--email-->
+            <!--lastname-->
             <div class="sm:col-span-4">
                 <mat-form-field class="fuse-mat-no-subscript w-full">
-                    <mat-label>Email</mat-label>
+                    <mat-label>prenom</mat-label>
                     <mat-icon
                         class="icon-size-5"
                         [svgIcon]="'heroicons_solid:user'"
                         matPrefix></mat-icon>
+                    <input
+                        [formControlName]="'prenom'"
+                        matInput>
+                </mat-form-field>
+            </div>
+            <!--email-->
+            <div class="sm:col-span-4">
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <mat-label>Email</mat-label>
+                    <mat-icon> email</mat-icon>
                     <input
                         [formControlName]="'email'"
                         matInput>
@@ -51,31 +48,26 @@
             <!--CIN-->
             <div class="sm:col-span-4">
                 <mat-form-field class="fuse-mat-no-subscript w-full">
-                    <mat-label>First name</mat-label>
-                    <mat-icon
-                        class="icon-size-5"
-                        [svgIcon]="'heroicons_solid:user'"
-                        matPrefix></mat-icon>
+                    <mat-label>Cin</mat-label>
+                    <mat-icon>account_box</mat-icon>
                     <input
-                        [formControlName]="'cin'"
-                        matInput>
+                    [formControlName]="'cin'"
+                    matInput>
                 </mat-form-field>
             </div>
-            <!-- Username
+            
+            <!--specialité-->
             <div class="sm:col-span-4">
-                <mat-form-field class="fuse-mat-no-subscript fuse-mat-emphasized-affix w-full">
-                    <mat-label>Username</mat-label>
-                    <div
-                        class="text-secondary"
-                        matPrefix>
-                        fusetheme.com/
-                    </div>
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <mat-label>Specialité</mat-label>
+                    <mat-icon>engineering</mat-icon>
                     <input
-                        [formControlName]="'username'"
+                        [formControlName]="'specialité'"
                         matInput>
                 </mat-form-field>
             </div>
-
+          
+  <!-- 
             <div class="sm:col-span-2">
                 <mat-form-field class="fuse-mat-no-subscript w-full">
                     <mat-label>Title</mat-label>
@@ -195,14 +187,14 @@
             <button
                 mat-stroked-button
                 type="button">
-                Cancel
+                annuler <mat-icon>cancel</mat-icon>
             </button>
             <button
             (click)="updatePersonalInformation()"
                 class="ml-4"
                 mat-flat-button
                 type="button"
-                [color]="'primary'">Save
+                [color]="'primary'">enregistrer <mat-icon>save</mat-icon>
             </button>
         </div>
     </form>

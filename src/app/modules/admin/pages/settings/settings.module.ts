@@ -18,6 +18,7 @@ import { SettingsNotificationsComponent } from 'app/modules/admin/pages/settings
 import { SettingsTeamComponent } from 'app/modules/admin/pages/settings/team/team.component';
 import { settingsRoutes } from 'app/modules/admin/pages/settings/settings.routing';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -40,7 +41,9 @@ import { HttpClientModule } from '@angular/common/http';
         MatSlideToggleModule,
         FuseAlertModule,
         SharedModule,
-        HttpClientModule
+        HttpClientModule,
+        ReactiveFormsModule
+       
     ]
 })
 export class SettingsModule

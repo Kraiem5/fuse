@@ -36,6 +36,7 @@ export class SettingsAccountComponent implements OnInit
             nom    : [''],
             prenom: [''],
             cin   : [''],
+            specialité   : [''],
             email   : ['', Validators.email],
 
         });

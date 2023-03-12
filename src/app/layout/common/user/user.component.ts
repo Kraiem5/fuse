@@ -64,7 +64,12 @@ export class UserComponent implements OnInit, OnDestroy
         this._unsubscribeAll.next();
         this._unsubscribeAll.complete();
     }
-
+    profile():void{
+        this._router.navigate(['/pages/profile'])
+    }
+    settings():void{
+        this._router.navigate(['/pages/settings'])
+    }
     // -----------------------------------------------------------------------------------------------------
     // @ Public methods
     // -----------------------------------------------------------------------------------------------------
