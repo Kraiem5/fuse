@@ -39,10 +39,8 @@ export class SettingsPlanBillingComponent implements OnInit
 
       onsubmit() {
         const formdata = new FormData()
-        formdata.append('file',this.image)
-        
+        formdata.append('file',this.image)  
         // post request to express backend
-
         this.http.post<any>(environment.backend_url+'api/user/file',formdata)
         .subscribe((res)=>{
             console.log(res)
