@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
+import { ProfileService } from '../settings/service/profile.service';
 
 @Component({
     selector       : 'profile',
@@ -11,7 +12,10 @@ export class ProfileComponent
     /**
      * Constructor
      */
-    constructor()
+    constructor(private srv :ProfileService)
     {
     }
+
+
+    
 }
